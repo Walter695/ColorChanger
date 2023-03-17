@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Color Change</title>
+    <style>
+        div{
+          height:100px;
+          width:100px;
+          border:solid;
+          border-radius:100px;
+          margin:auto;
+        }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div id="circle1"></div>
+      <div id="circle2"></div>
+      <div id="circle3"></div>
+      <div id="circle4"></div>
+      <div id="circle5"></div>
+      <button type="button" onclick="Change()" >Change</button>
+    </center>
+  </body>
+
+  <script type="text/javascript">
+    var c1 = 1, c2 = 0, c3 = -1, c4 = -2, c5 = -3;
+    function Change() {
+    document.getElementById('circle1').style.background = Color(c1);
+    document.getElementById('circle2').style.background = Color(c2);
+    document.getElementById('circle3').style.background = Color(c3);
+    document.getElementById('circle4').style.background = Color(c4);
+    document.getElementById('circle5').style.background = Color(c5);
+    c5 = c4; c4 = c3; c3 = c2; c2 = c1;
+    if (c1 == 5) {
+        c1 = 0;
+    }
+    c1++;
+    }
+
+    function Color(i) {
+    var colors = "";
+    switch (i) {
+        case 1:
+            colors = "Red";
+            break;
+        case 2:
+            colors = "Yellow";
+            break;
+        case 3:
+            colors = "Blue";
+            break;
+        case 4:
+            colors = "Green";
+            break;
+        case 5:
+            colors = "Orange";
+            break;
+    }
+    return colors;
+    }
+
+    </script>
+    </html>
